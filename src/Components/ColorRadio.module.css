@@ -1,0 +1,20 @@
+.box{
+  display: flex;
+}
+
+.color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.pink {
+  background-color: pink;
+}
+
+.yellow {
+  background-color: rgb(255, 255, 153);
+}
+
+.green {
+  background-color: rgb(142, 212, 101);
+}
