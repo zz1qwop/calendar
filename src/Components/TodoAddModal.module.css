@@ -16,8 +16,65 @@
 }
 
 .form {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 16px;
+  width: 40%;
   height: 60%;
-  background-color: aliceblue;
+  background-color: var(--color-white);
   border-radius: 8px;
+}
+
+.infoBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  margin: 0;
+}
+
+.closeBtn {
+  cursor: pointer;
+  font-size: var(--font-legular);
+}
+
+.title {
+  font-family: 'Noto Sans KR', sans-serif;
+
+  height: 30px;
+  border: none;
+  background-color: var(--color-light-gray);
+  outline: none;
+}
+
+.description {
+  font-family: 'Noto Sans KR', sans-serif;
+
+  border: none;
+  background-color: var(--color-light-gray);
+  padding: 8px;
+  outline: none;
+}
+
+.time {
+  font-family: 'Noto Sans KR', sans-serif;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: var(--color-light-gray);
+}
+
+.addBtn {
+  cursor: pointer;
+  height: 30px;
+  border: none;
+  background-color: var(--color-light-pink);
+  color: var(--color-white);
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CalendarBox from '../Components/CalendarBox';
 import Schedule from '../Components/Schedule';
 import TodoAddModal from '../Components/TodoAddModal';
+import styles from './MyCalendarPage.module.css';
 
 export default function MyCalendarPage() {
   const [date, setDate] = useState(new Date());
@@ -16,7 +17,7 @@ export default function MyCalendarPage() {
   };
 
   return (
-    <>
+    <div className={styles.box}>
       <CalendarBox date={date} handleDate={setDate} />
       <Schedule date={date} handleDate={setDate} openModal={openModal} />
       <TodoAddModal
@@ -26,6 +27,6 @@ export default function MyCalendarPage() {
         schedule={schedule}
         addSchedule={setSchedule}
       />
-    </>
+    </div>
   );
 }
