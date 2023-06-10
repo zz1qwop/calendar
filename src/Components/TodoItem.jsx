@@ -7,7 +7,7 @@ export default function TodoItem({ todo }) {
     todo.color === 'pink'
       ? '#ff8f8f'
       : todo.color === 'yellow'
-      ? '#ffeda5'
+      ? '#fbde7e'
       : '#bfe19b';
   return (
     <div className={styles.todoBox}>
