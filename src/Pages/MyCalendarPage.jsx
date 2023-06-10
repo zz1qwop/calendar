@@ -19,7 +19,7 @@ export default function MyCalendarPage() {
   return (
     <div className={styles.box}>
       <CalendarBox date={date} handleDate={setDate} />
-      <Schedule date={date} handleDate={setDate} openModal={openModal} />
+      <Schedule date={date} handleDate={setDate} openModal={openModal} schedule={schedule} />
       <TodoAddModal
         open={modal}
         date={date}

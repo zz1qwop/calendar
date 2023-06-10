@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 import styles from './TodoAddModal.module.css';
 import ColorRadio from './ColorRadio';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -22,16 +23,16 @@ export default function TodoAddModal({
       return;
     }
 
-    const month = date.getMonth();
+    const month = date.getMonth() + "월";
     const newTodo = {
-      date: `${date}`,
+      date: `${moment(date).format('YYYY년 MM월 DD일')}`,
       color: `${color}`,
       title: `${title}`,
       description: `${description}`,
       time: `${time}`,
     };
 
-    if (Object.keys(schedule).includes(`${date.getMonth()}`)) {
+    if (Object.keys(schedule).includes(`${date.getMonth()}월`)) {
       const monthSchedule = schedule[month].concat(newTodo);
       addSchedule((prev) => ({
         ...prev,

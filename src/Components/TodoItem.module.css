@@ -1,0 +1,35 @@
+.todoBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.title {
+  margin: 0;
+}
+
+.btnBox {
+  display: flex;
+  align-items: center;
+}
+
+.edit {
+  cursor: pointer;
+}
+.delete {
+  margin-left: 8px;
+  cursor: pointer;
+}
