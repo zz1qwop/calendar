@@ -3,13 +3,17 @@ import moment from 'moment';
 import { AiOutlinePlus } from 'react-icons/ai';
 import styles from './Schedule.module.css';
 import TodoItem from './TodoItem';
+import TodoDetail from './TodoDetail';
 
 export default function Schedule({
   date,
-  handleDate,
   openModal,
   schedule,
   deleteTodoItem,
+  isList,
+  selectedTodo,
+  handleTodo,
+  closeDetail,
 }) {
   // 해당 날짜의 일정 리스트 만들기
   const month = date.getMonth() + '월';
@@ -34,14 +38,24 @@ export default function Schedule({
       </div>
       <div className={styles.scheduleBox}>
         {/* 해당 date에 맞는 데이터를 골라 map으로 돌며 item 생성. */}
-        {scheduleList.map((todo, index) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
+        {isList &&
+          scheduleList.map((todo, index) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              month={month}
+              deleteTodoItem={deleteTodoItem}
+              handleTodo={handleTodo}
+            />
+          ))}
+        {!isList && (
+          <TodoDetail
+            todo={selectedTodo}
             month={month}
+            closeDetail={closeDetail}
             deleteTodoItem={deleteTodoItem}
           />
-        ))}
+        )}
       </div>
     </div>
   );

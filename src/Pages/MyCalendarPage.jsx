@@ -9,6 +9,17 @@ export default function MyCalendarPage() {
   const [modal, setModal] = useState(false);
   const [schedule, setSchedule] = useState({});
 
+  // 일정 클릭 시 일정의 상세 페이지로 이동하는 기능
+  const [isList, setIsList] = useState(true);
+  const [selectedTodo, setSelectedTodo] = useState({});
+  const handleTodo = (todo) => {
+    setSelectedTodo(todo);
+    setIsList(false);
+  };
+  const closeDetail = () => {
+    setIsList(true);
+  };
+
   const openModal = () => {
     setModal(true);
   };
@@ -25,13 +36,21 @@ export default function MyCalendarPage() {
 
   return (
     <div className={styles.box}>
-      <CalendarBox date={date} handleDate={setDate} schedule={schedule} />
-      <Schedule
+      <CalendarBox
         date={date}
         handleDate={setDate}
+        schedule={schedule}
+        closeDetail={closeDetail}
+      />
+      <Schedule
+        date={date}
         openModal={openModal}
         schedule={schedule}
         deleteTodoItem={deleteTodoItem}
+        isList={isList}
+        selectedTodo={selectedTodo}
+        handleTodo={handleTodo}
+        closeDetail={closeDetail}
       />
       <TodoAddModal
         open={modal}

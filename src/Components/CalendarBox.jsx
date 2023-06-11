@@ -7,6 +7,7 @@ export default function CalendarBox({
   date: selectedDate,
   handleDate,
   schedule,
+  closeDetail,
 }) {
   const show = ({ date, view }) => {
     if (view === 'month') {
@@ -52,6 +53,7 @@ export default function CalendarBox({
         next2Label={null}
         prev2Label={null}
         tileContent={show}
+        onClickDay={closeDetail}
       />
     </div>
   );

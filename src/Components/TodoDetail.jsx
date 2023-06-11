@@ -1,0 +1,43 @@
+import React from 'react';
+import styles from './TodoDetail.module.css';
+import { BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs';
+import { AiOutlineClose } from 'react-icons/ai';
+
+export default function TodoDetail({
+  todo,
+  month,
+  closeDetail,
+  deleteTodoItem,
+}) {
+  const selectedColor =
+    todo.color === 'pink'
+      ? '#ff8f8f'
+      : todo.color === 'yellow'
+      ? '#fbde7e'
+      : '#bfe19b';
+
+  return (
+    <div className={styles.todoBox}>
+      <div className={styles.header}>
+        <h2 className={styles.title} style={{ backgroundColor: selectedColor }}>
+          {todo.title}
+        </h2>
+        <p className={styles.time}>{todo.time}</p>
+      </div>
+      <p className={styles.description}>{todo.description}</p>
+      <div className={styles.btnBox}>
+        <AiOutlineClose className={styles.close} onClick={closeDetail} />
+        <div className={styles.itemBtnBox}>
+          <BsFillPencilFill className={styles.edit} />
+          <BsFillTrashFill
+            className={styles.delete}
+            onClick={() => {
+              deleteTodoItem(month, todo.id);
+              closeDetail();
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
