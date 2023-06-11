@@ -3,6 +3,7 @@ import moment from 'moment';
 import styles from './TodoAddModal.module.css';
 import ColorRadio from './ColorRadio';
 import { AiOutlineClose } from 'react-icons/ai';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function TodoAddModal({
   date,
@@ -23,8 +24,9 @@ export default function TodoAddModal({
       return;
     }
 
-    const month = date.getMonth() + "월";
+    const month = date.getMonth() + '월';
     const newTodo = {
+      id: `${uuidv4()}`,
       date: `${moment(date).format('YYYY년 MM월 DD일')}`,
       color: `${color}`,
       title: `${title}`,

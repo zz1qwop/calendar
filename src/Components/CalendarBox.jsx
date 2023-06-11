@@ -28,8 +28,13 @@ export default function CalendarBox({
             ? '#fbde7e'
             : '#bfe19b';
         html.push(
-          <div key={i} style={{ backgroundColor: selectedColor }}>
-            {scheduleList[i].title}
+          <div
+            key={scheduleList[i].id}
+            style={{ backgroundColor: selectedColor }}
+          >
+            {scheduleList[i].title.length > 6
+              ? scheduleList[i].title.substring(0, 5) + '..'
+              : scheduleList[i].title}
           </div>
         );
       }
