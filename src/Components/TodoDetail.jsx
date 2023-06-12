@@ -8,6 +8,7 @@ export default function TodoDetail({
   month,
   closeDetail,
   deleteTodoItem,
+  handleEditTrue,
 }) {
   const selectedColor =
     todo.color === 'pink'
@@ -28,7 +29,12 @@ export default function TodoDetail({
       <div className={styles.btnBox}>
         <AiOutlineClose className={styles.close} onClick={closeDetail} />
         <div className={styles.itemBtnBox}>
-          <BsFillPencilFill className={styles.edit} />
+          <BsFillPencilFill
+            className={styles.edit}
+            onClick={() => {
+              handleEditTrue();
+            }}
+          />
           <BsFillTrashFill
             className={styles.delete}
             onClick={() => {

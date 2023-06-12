@@ -33,6 +33,15 @@ export default function MyCalendarPage() {
       [month]: newList,
     }));
   };
+  const updateTodoItem = (month, newTodo) => {
+    const newList = schedule[month]
+      .filter((todo) => todo.id !== newTodo.id)
+      .concat(newTodo);
+    setSchedule((prev) => ({
+      ...prev,
+      [month]: newList,
+    }));
+  };
 
   return (
     <div className={styles.box}>
@@ -51,6 +60,7 @@ export default function MyCalendarPage() {
         selectedTodo={selectedTodo}
         handleTodo={handleTodo}
         closeDetail={closeDetail}
+        updateTodoItem={updateTodoItem}
       />
       <TodoAddModal
         open={modal}

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { AiOutlinePlus } from 'react-icons/ai';
 import styles from './Schedule.module.css';
 import TodoItem from './TodoItem';
 import TodoDetail from './TodoDetail';
+import TodoEdit from './TodoEdit';
 
 export default function Schedule({
   date,
@@ -14,7 +15,15 @@ export default function Schedule({
   selectedTodo,
   handleTodo,
   closeDetail,
+  updateTodoItem,
 }) {
+  const [isEdit, setIsEdit] = useState(false);
+  const handleEditTrue = () => {
+    setIsEdit(true);
+  };
+  const handleEditFalse = () => {
+    setIsEdit(false);
+  };
   // 해당 날짜의 일정 리스트 만들기
   const month = date.getMonth() + '월';
   const scheduleList = Object.keys(schedule).includes(`${date.getMonth()}월`)
@@ -46,14 +55,26 @@ export default function Schedule({
               month={month}
               deleteTodoItem={deleteTodoItem}
               handleTodo={handleTodo}
+              handleEditTrue={handleEditTrue}
             />
           ))}
-        {!isList && (
+        {!isList && !isEdit && (
           <TodoDetail
             todo={selectedTodo}
             month={month}
             closeDetail={closeDetail}
             deleteTodoItem={deleteTodoItem}
+            handleEditTrue={handleEditTrue}
+          />
+        )}
+        {!isList && isEdit && (
+          <TodoEdit
+            todo={selectedTodo}
+            month={month}
+            updateTodoItem={updateTodoItem}
+            schedule={schedule}
+            handleEditFalse={handleEditFalse}
+            handleTodo={handleTodo}
           />
         )}
       </div>
