@@ -1,10 +1,13 @@
 import './App.css';
+import { ColorThemeProvider } from './Context/ColorThemeContext';
 import MyCalendarPage from './Pages/MyCalendarPage';
 
 function App() {
   return (
     <>
-      <MyCalendarPage />
+      <ColorThemeProvider>
+        <MyCalendarPage />
+      </ColorThemeProvider>
     </>
   );
 }

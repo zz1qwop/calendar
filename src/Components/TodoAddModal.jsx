@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import moment from 'moment';
 import styles from './TodoAddModal.module.css';
 import ColorRadio from './ColorRadio';
 import { AiOutlineClose } from 'react-icons/ai';
 import { v4 as uuidv4 } from 'uuid';
+import { ColorThemeContext } from '../Context/ColorThemeContext';
 
 export default function TodoAddModal({
   date,
@@ -12,6 +13,8 @@ export default function TodoAddModal({
   schedule,
   addSchedule,
 }) {
+  const { colorTheme } = useContext(ColorThemeContext);
+
   const [color, setColor] = useState('pink');
   const [title, setTitle] = useState('');
   const [description, setDescrpition] = useState('');
@@ -59,7 +62,16 @@ export default function TodoAddModal({
     <div
       className={open ? `${styles.modal} ${styles.openModal}` : styles.modal}
     >
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form
+        onSubmit={handleSubmit}
+        className={`${styles.form} ${
+          colorTheme === 'pink'
+            ? styles.pink
+            : colorTheme === 'yellow'
+            ? styles.yellow
+            : styles.green
+        }`}
+      >
         <div className={styles.infoBox}>
           <h2 className={styles.info}>일정 등록하기</h2>
           <AiOutlineClose className={styles.closeBtn} onClick={closeModal} />

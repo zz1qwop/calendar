@@ -2,12 +2,21 @@
   display: flex;
 }
 
+.theme {
+  flex-direction: column;
+}
+
 .color {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
 }
+
+.themeColor {
+  margin-top: 8px;
+}
+
 .pink {
   background-color: var(--color-pink);
   margin-right: 8px;

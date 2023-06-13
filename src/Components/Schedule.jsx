@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import moment from 'moment';
 import { AiOutlinePlus } from 'react-icons/ai';
 import styles from './Schedule.module.css';
 import TodoItem from './TodoItem';
 import TodoDetail from './TodoDetail';
 import TodoEdit from './TodoEdit';
+import { ColorThemeContext } from '../Context/ColorThemeContext';
 
 export default function Schedule({
   date,
@@ -17,6 +18,8 @@ export default function Schedule({
   closeDetail,
   updateTodoItem,
 }) {
+  const { colorTheme } = useContext(ColorThemeContext);
+
   const [isEdit, setIsEdit] = useState(false);
   const handleEditTrue = () => {
     setIsEdit(true);
@@ -35,7 +38,15 @@ export default function Schedule({
   console.log(scheduleList);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${
+        colorTheme === 'pink'
+          ? styles.pink
+          : colorTheme === 'yellow'
+          ? styles.yellow
+          : styles.green
+      }`}
+    >
       <div className={styles.header}>
         <p className={styles.title}>Schedule</p>
         <div className={styles.dateBox}>

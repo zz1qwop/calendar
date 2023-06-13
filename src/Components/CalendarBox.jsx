@@ -2,6 +2,8 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './CalendarBox.css';
 import moment from 'moment';
+import { useContext } from 'react';
+import { ColorThemeContext } from '../Context/ColorThemeContext';
 
 export default function CalendarBox({
   date: selectedDate,
@@ -9,6 +11,8 @@ export default function CalendarBox({
   schedule,
   closeDetail,
 }) {
+  const { colorTheme } = useContext(ColorThemeContext);
+
   const show = ({ date, view }) => {
     if (view === 'month') {
       const month = date.getMonth() + '월';
@@ -27,7 +31,7 @@ export default function CalendarBox({
             ? '#ff8f8f'
             : scheduleList[i].color === 'yellow'
             ? '#fbde7e'
-            : '#bfe19b';
+            : '#8cbc59';
         html.push(
           <div
             key={scheduleList[i].id}
@@ -54,6 +58,13 @@ export default function CalendarBox({
         prev2Label={null}
         tileContent={show}
         onClickDay={closeDetail}
+        className={`${
+          colorTheme === 'pink'
+            ? 'pink'
+            : colorTheme === 'yellow'
+            ? 'yellow'
+            : 'green'
+        }`}
       />
     </div>
   );

@@ -1,8 +1,16 @@
 :root {
   --color-light-pink: #ffbfbf;
   --color-pink: #ff8f8f;
+  --color-orange: #ff9f51;
+  --color-light-yellow: #fffacd;
   --color-yellow: #fbde7e;
-  --color-green: #bfe19b;
+  --color-dark-yellow: #ffbe3b;
+  --color-light-green: #bede91;
+  --color-green: #8cbc59;
+  --color-blue: #83b2e0;
+  --color-dark-blue: #2d4074;
+  --color-purple: #b47fb6;
+
   --color-white: #ffffff;
   --color-light-gray: #f3f3f3;
   --color-gray: #cfcfcf;
@@ -37,17 +45,6 @@ body {
 
 #root {
   height: 100%;
-  background: rgb(204, 255, 209);
-  background: linear-gradient(
-    0deg,
-    rgba(204, 255, 209, 1) 0%,
-    rgba(255, 182, 182, 1) 100%
-  );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   font-family: 'Open Sans', sans-serif;
 }
 

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './TodoDetail.module.css';
 import { BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
+import { ColorThemeContext } from '../Context/ColorThemeContext';
 
 export default function TodoDetail({
   todo,
@@ -10,15 +11,25 @@ export default function TodoDetail({
   deleteTodoItem,
   handleEditTrue,
 }) {
+  const { colorTheme } = useContext(ColorThemeContext);
+
   const selectedColor =
     todo.color === 'pink'
       ? '#ff8f8f'
       : todo.color === 'yellow'
       ? '#fbde7e'
-      : '#bfe19b';
+      : '#8cbc59';
 
   return (
-    <div className={styles.todoBox}>
+    <div
+      className={`${styles.todoBox} ${
+        colorTheme === 'pink'
+          ? styles.pink
+          : colorTheme === 'yellow'
+          ? styles.yellow
+          : styles.green
+      }`}
+    >
       <div className={styles.header}>
         <h2 className={styles.title} style={{ backgroundColor: selectedColor }}>
           {todo.title}

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './TodoEdit.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
 import ColorRadio from './ColorRadio';
+import { ColorThemeContext } from '../Context/ColorThemeContext';
 
 export default function TodoEdit({
   todo,
@@ -11,6 +12,8 @@ export default function TodoEdit({
   handleEditFalse,
   handleTodo,
 }) {
+  const { colorTheme } = useContext(ColorThemeContext);
+
   const [color, setColor] = useState(todo.color);
   const [title, setTitle] = useState(todo.title);
   const [description, setDescrpition] = useState(todo.description);
@@ -61,7 +64,15 @@ export default function TodoEdit({
         value={description}
         onChange={(e) => setDescrpition(e.target.value)}
       />
-      <div className={styles.btnBox}>
+      <div
+        className={`${styles.btnBox} ${
+          colorTheme === 'pink'
+            ? styles.pink
+            : colorTheme === 'yellow'
+            ? styles.yellow
+            : styles.green
+        }`}
+      >
         <AiOutlineClose className={styles.close} onClick={handleEditFalse} />
         <button type="submit" className={styles.finishBtn}>
           OK

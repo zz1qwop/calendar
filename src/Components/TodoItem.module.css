@@ -25,6 +25,7 @@
 .btnBox {
   display: flex;
   align-items: center;
+  color: var(--color-pink);
 }
 
 .edit {
@@ -33,4 +34,14 @@
 .delete {
   margin-left: 8px;
   cursor: pointer;
+}
+
+/* yellow theme */
+.yellow {
+  color: var(--color-dark-yellow);
+}
+
+/* green theme */
+.green {
+  color: var(--color-green);
 }
