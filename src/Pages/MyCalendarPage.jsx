@@ -10,7 +10,11 @@ import { ColorThemeContext } from '../Context/ColorThemeContext';
 export default function MyCalendarPage() {
   const [date, setDate] = useState(new Date());
   const [modal, setModal] = useState(false);
-  const [schedule, setSchedule] = useState({});
+  const [schedule, setSchedule] = useState(() => loadData());
+
+  useEffect(() => {
+    localStorage.setItem('schedule', JSON.stringify(schedule));
+  }, [schedule]);
 
   // 일정 클릭 시 일정의 상세 페이지로 이동하는 기능
   const [isList, setIsList] = useState(true);
@@ -106,4 +110,9 @@ export default function MyCalendarPage() {
       </div>
     </div>
   );
+}
+
+function loadData() {
+  const schedule = JSON.parse(localStorage.getItem('schedule'));
+  return schedule ? schedule : {};
 }
