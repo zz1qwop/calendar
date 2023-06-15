@@ -55,7 +55,6 @@ export default function TodoAddModal({
     setDescrpition('');
     setTime('09:00');
     closeModal();
-    console.log(schedule);
   };
 
   return (
