@@ -92,3 +92,9 @@
     background-color: var(--color-green);
   }
 }
+
+@media (max-width: 500px) {
+  .form {
+    width: 300px;
+  }
+}

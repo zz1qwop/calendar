@@ -88,3 +88,12 @@
     color: var(--color-green);
   }
 }
+
+@media (max-width: 500px) {
+  .todoBox {
+    height: 270px;
+  }
+  .description {
+    height: 150px;
+  }
+}

@@ -77,3 +77,23 @@
     color: var(--color-green);
   }
 }
+
+@media (max-width: 500px) {
+  .box {
+    flex-direction: column;
+    width: 300px;
+    height: 550px;
+  }
+
+  .colorTheme {
+    bottom: 3%;
+    right: 5%;
+    margin-right: 8px;
+  }
+
+  .colorRadio {
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+  }
+}

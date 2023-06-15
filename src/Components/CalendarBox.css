@@ -198,3 +198,46 @@ abbr {
     color: var(--color-green);
   }
 }
+
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 65%;
+    padding-bottom: 4px;
+  }
+
+  .react-calendar__month-view__days__day {
+    height: 45px;
+  }
+  .react-calendar__navigation {
+    margin: 4px 0;
+  }
+  abbr {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .react-calendar__tile {
+    font-size: var(--font-micro);
+  }
+
+  .scheduleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .scheduleBox div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    font-size: var(--font-micro);
+    color: transparent;
+  }
+}

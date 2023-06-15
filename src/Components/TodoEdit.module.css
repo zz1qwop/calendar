@@ -93,3 +93,12 @@
     background-color: var(--color-green);
   }
 }
+
+@media (max-width: 500px) {
+  .form {
+    height: 270px;
+  }
+  .description {
+    height: 150px;
+  }
+}
