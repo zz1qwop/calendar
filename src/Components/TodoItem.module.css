@@ -9,6 +9,7 @@
 .titleBox {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .color {
@@ -20,6 +21,7 @@
 
 .title {
   margin: 0;
+  flex-grow: 1;
 }
 
 .btnBox {

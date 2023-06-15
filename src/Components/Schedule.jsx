@@ -35,8 +35,6 @@ export default function Schedule({
       )
     : [];
 
-  console.log(scheduleList);
-
   return (
     <div
       className={`${styles.container} ${
