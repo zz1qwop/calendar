@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+### React 프로젝트
+#### [react-calendar](https://www.npmjs.com/package/react-calendar) 를 사용해 일정 관리를 할 수 있는 웹페이지를 만들었습니다.
+🥝 https://wondrous-kringle-c6e8e6.netlify.app
+- 배포는 netlify를 사용했습니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### 기능
+![일정 저장](https://github.com/zz1qwop/calendar/assets/84325395/42969386-d936-4136-bfba-a5a3c19cf246)
+<br />
+**1. 일정 추가**<br />
+Schedule 탭의 + 버튼을 누르면 일정을 추가할 수 있는 모달 창이 뜹니다.
+<br />
 
-## Available Scripts
+![일정 보기](https://github.com/zz1qwop/calendar/assets/84325395/3081c2e3-7455-4b50-8ee0-8b96ba50736f)
+<br />
+**2. 일정 확인**<br />
+캘린더와 Schedule 탭에서 등록한 일정을 확인할 수 있습니다. 캘린더에서는 일정이 2개까지 표시됩니다.
+<br />
 
-In the project directory, you can run:
+![일정 상세보기](https://github.com/zz1qwop/calendar/assets/84325395/745f01be-96a0-4666-8243-ab727756d52f)
+<br />
+**3. 일정 상세보기**<br />
+일정 리스트에서 아이템을 클릭하면 상세보기를 할 수 있습니다.
+<br />
 
-### `yarn start`
+![일정 수정](https://github.com/zz1qwop/calendar/assets/84325395/64c145b8-9b5b-4574-a841-de9492ff842b)
+<br />
+**4. 일정 수정**<br />
+수정 아이콘을 눌러 일정을 수정합니다.
+- 아쉬운 점: 아이템을 삭제 후 다시 넣다 보니 일정의 순서가 바뀌는 경우가 있습니다.
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![일정 삭제](https://github.com/zz1qwop/calendar/assets/84325395/912bb46e-c935-478b-ade1-29ef4d4b8450)
+<br />
+**5. 일정 삭제**<br />
+삭제 아이콘을 눌러 일정을 삭제합니다.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![색상 변경](https://github.com/zz1qwop/calendar/assets/84325395/b69d2439-b6d1-4dfd-9be4-646f2eb2f79b)
+<br />
+**6. 색상 테마 변경하기**<br />
+오른쪽 하단의 팔레트 아이콘을 클릭하면 색상 라디오가 나옵니다. 클릭하여 색상 테마를 변경할 수 있습니다.
+<br />
 
-### `yarn test`
+**7. 일정을 localStorage에 저장**<br />
+새로고침을 해도 데이터가 유지됩니다.
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![mobile](https://github.com/zz1qwop/calendar/assets/84325395/cf035628-1d3e-4d24-8523-d5caf09469b1)
+**8. 참고 - 모바일**<br />
+모바일에서는 일정 탭이 캘린더 아래로 내려갑니다. 화면이 좁다 보니 캘린더에 표시되는 일정은 원으로만 보이게 했습니다. <br />
+일정 상세보기, 일정 수정은 일정 탭을 스크롤하여 이용할 수 있습니다.
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[블로그](https://velog.io/@zz1qwop/React-Calendar-%EC%9D%BC%EC%A0%95-%EA%B4%80%EB%A6%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)에도 기록해뒀습니다.
