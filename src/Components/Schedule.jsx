@@ -30,9 +30,9 @@ export default function Schedule({
   // 해당 날짜의 일정 리스트 만들기
   const month = date.getMonth() + '월';
   const scheduleList = Object.keys(schedule).includes(`${date.getMonth()}월`)
-    ? schedule[month].filter(
-        (todo) => todo.date === moment(date).format('YYYY년 MM월 DD일')
-      )
+    ? schedule[month]
+        .filter((todo) => todo.date === moment(date).format('YYYY년 MM월 DD일'))
+        .sort((a, b) => a.idx - b.idx)
     : [];
 
   return (
@@ -51,7 +51,13 @@ export default function Schedule({
           <p className={styles.date}>
             {moment(date).format('YYYY년 MM월 DD일')}
           </p>
-          <AiOutlinePlus className={styles.addBtn} onClick={openModal} />
+          <button
+            className={styles.addBtn}
+            onClick={openModal}
+            aria-label="addBtn"
+          >
+            <AiOutlinePlus />
+          </button>
         </div>
       </div>
       <div className={styles.scheduleBox}>

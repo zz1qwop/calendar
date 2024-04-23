@@ -35,9 +35,11 @@ export default function TodoAddModal({
       title: `${title}`,
       description: `${description}`,
       time: `${time}`,
+      idx: 1,
     };
 
     if (Object.keys(schedule).includes(`${date.getMonth()}월`)) {
+      newTodo.idx = schedule[month].length + 1;
       const monthSchedule = schedule[month].concat(newTodo);
       addSchedule((prev) => ({
         ...prev,
@@ -98,7 +100,7 @@ export default function TodoAddModal({
           onChange={(e) => setTime(e.target.value)}
         />
         <button type="submit" className={styles.addBtn}>
-          OK
+          SUBMIT
         </button>
       </form>
     </div>

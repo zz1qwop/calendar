@@ -19,7 +19,7 @@ export default function TodoItem({
       ? '#fbde7e'
       : '#8cbc59';
   return (
-    <div className={styles.todoBox}>
+    <div className={styles.todoBox} data-testid="todoItem">
       <div
         className={styles.titleBox}
         onClick={() => {
@@ -47,6 +47,7 @@ export default function TodoItem({
             handleTodo(todo);
             handleEditTrue();
           }}
+          data-testid="modify"
         />
         <BsFillTrashFill
           className={styles.delete}

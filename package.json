@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-calendar": "^4.2.1",
@@ -40,6 +37,10 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-react-app": "^7.0.1"
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "eslint-config-react-app": "^7.0.1",
+    "identity-obj-proxy": "^3.0.0"
   }
 }

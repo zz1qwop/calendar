@@ -38,7 +38,11 @@ export default function TodoDetail({
       </div>
       <p className={styles.description}>{todo.description}</p>
       <div className={styles.btnBox}>
-        <AiOutlineClose className={styles.close} onClick={closeDetail} />
+        <AiOutlineClose
+          className={styles.close}
+          onClick={closeDetail}
+          data-testid="closeDetail"
+        />
         <div className={styles.itemBtnBox}>
           <BsFillPencilFill
             className={styles.edit}

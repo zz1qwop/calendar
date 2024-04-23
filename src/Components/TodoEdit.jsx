@@ -32,6 +32,7 @@ export default function TodoEdit({
       title: `${title}`,
       description: `${description}`,
       time: `${time}`,
+      idx: todo.idx,
     };
 
     updateTodoItem(month, newTodo);
@@ -48,7 +49,7 @@ export default function TodoEdit({
           className={styles.title}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="title"
+          placeholder="title edit"
         />
         <input
           type="time"

@@ -20,9 +20,11 @@ export default function CalendarBox({
       const scheduleList = Object.keys(schedule).includes(
         `${date.getMonth()}월`
       )
-        ? schedule[month].filter(
-            (todo) => todo.date === moment(date).format('YYYY년 MM월 DD일')
-          )
+        ? schedule[month]
+            .filter(
+              (todo) => todo.date === moment(date).format('YYYY년 MM월 DD일')
+            )
+            .sort((a, b) => a.idx - b.idx)
         : [];
       for (let i = 0; i < scheduleList.length; i++) {
         if (i === 2) break;
