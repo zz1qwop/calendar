@@ -26,6 +26,8 @@ export default function CalendarBox({
             )
             .sort((a, b) => a.idx - b.idx)
         : [];
+
+      const korean = /[ㄱ-ㅎ|ㅏ-ㅣ-가-힣]/;
       for (let i = 0; i < scheduleList.length; i++) {
         if (i === 2) break;
         const selectedColor =
@@ -39,7 +41,11 @@ export default function CalendarBox({
             key={scheduleList[i].id}
             style={{ backgroundColor: selectedColor }}
           >
-            {scheduleList[i].title.length > 6
+            {korean.test(scheduleList[i].title)
+              ? scheduleList[i].title.length > 4
+                ? scheduleList[i].title.substring(0, 4) + '..'
+                : scheduleList[i].title
+              : scheduleList[i].title.length > 5
               ? scheduleList[i].title.substring(0, 5) + '..'
               : scheduleList[i].title}
           </div>
